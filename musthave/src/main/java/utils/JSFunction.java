@@ -5,7 +5,7 @@ import javax.servlet.jsp.JspWriter;
 public class JSFunction {
 
   // 메시지 알림창을 띄운 후 명시한 URL로 이동합니다.
-  public static void altertLocation (String msg, String url, JspWriter out) {
+  public static void alertLocation (String msg, String url, JspWriter out) {
     try {
 
      String script = "" // 삽입할 자바 스크립트 코드
@@ -19,7 +19,7 @@ public class JSFunction {
   }
 
   // 메시지 알림창을 띄운 후 이전 페이지로 돌아갑니다.
-  public static void altertBack (String msg, JspWriter out) {
+  public static void alertBack (String msg, JspWriter out) {
     try {
 
       String script = "" // 삽입할 자바 스크립트 코드
