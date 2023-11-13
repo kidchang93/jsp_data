@@ -5,7 +5,7 @@ public class MemberDTO {
   private String id;
   private String pass;
   private String name;
-  private String regidate;
+  private String register;
 
 
   public String getId() {
@@ -32,11 +32,11 @@ public class MemberDTO {
     this.name = name;
   }
 
-  public String getRegidate() {
-    return regidate;
+  public String getRegister() {
+    return register;
   }
 
-  public void setRegidate(String regidate) {
-    this.regidate = regidate;
+  public void setRegister(String register) {
+    this.register = register;
   }
 }

@@ -10,7 +10,7 @@ public class MemberDAO extends JDBConnect {
   // 명시한 아이디/패스워드와 일치하는 회원 정보를 반환합니다.
   public MemberDTO getMemberDTO(String uid, String upass){
     MemberDTO dto = new MemberDTO();
-    String query = "SELECT * FROM memeber WHERE id =? AND pass =?";
+    String query = "SELECT * FROM member WHERE id =? AND pass =?";
 
     try {
       // 쿼리 실행
@@ -25,7 +25,7 @@ public class MemberDAO extends JDBConnect {
         dto.setId(rs.getString("id"));
         dto.setPass(rs.getString("pass"));
         dto.setName(rs.getString(3));
-        dto.setRegidate(rs.getString(4));
+        dto.setRegister(rs.getString(4));
       }
     }
     catch (Exception e) {
