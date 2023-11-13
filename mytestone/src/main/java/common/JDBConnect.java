@@ -33,7 +33,7 @@ public class JDBConnect {
   public JDBConnect(String driver , String url , String id, String pwd){
     try {
       // JDBC 드라이버 로드
-      forName(driver);
+      Class.forName(driver);
       // DB에 연결
       con = DriverManager.getConnection(url,id,pwd);
 
@@ -47,12 +47,12 @@ public class JDBConnect {
   public JDBConnect (ServletContext application) {
     try {
       // JDBC 드라이버 로드
-      String driver = application.getInitParameter("MySQL_Driver");
+      String driver = application.getInitParameter("MariaDB_Driver");
       Class.forName(driver);
       // DB에 연결
-      String url = application.getInitParameter("MySQL_URL");
-      String id = application.getInitParameter("MySQL_Id");
-      String pwd = application.getInitParameter("MySQL_Pwd");
+      String url = application.getInitParameter("MariaDB_URL");
+      String id = application.getInitParameter("MariaDB_Id");
+      String pwd = application.getInitParameter("MariaDB_Pwd");
       con = DriverManager.getConnection(url,id,pwd);
 
       System.out.println("DB 연결 성공(인수 생성자 2)");
