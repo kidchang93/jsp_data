@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Quzz
-  Date: 2023-11-13
-  Time: 오후 11:57
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<table border="1" width="90%">
+    <tr>
+        <td align="center">
+        <%--로그인 여부에 따른 메뉴 변화--%>
+<%
+    if (session.getAttribute("UserId") == null) { %>
+            <a href="../06Session/LoginForm.jsp">로그인</a>
+            <% } else { %>
+            <a href="../06Session/Logout.jsp">로그아웃</a>
+            <% } %>
+            <%--8장과 9장의 회원제 게시판 프로젝트에서 사용할 링크--%>
+            &nbsp;&nbsp;&nbsp;
+            <a href="../08Board/List.jsp">게시판(페이징X)</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="../09PagingBoard/List.jsp">게시판(페이징O)</a>
+        </td>
+    </tr>
+</table>
