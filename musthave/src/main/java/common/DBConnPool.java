@@ -20,7 +20,7 @@ public class DBConnPool {
       // 커넥션 풀(DataSource) 얻기
       Context initCtx = new InitialContext();
       Context ctx = (Context) initCtx.lookup("java:comp/env");
-      DataSource source = (DataSource) ctx.lookup("mytestone");
+      DataSource source = (DataSource) ctx.lookup("model1");
 
       // 커넥션 풀을 통해 연결 얻기
       con = source.getConnection();

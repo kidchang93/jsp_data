@@ -18,7 +18,7 @@ public class JDBConnect {
       forName("org.mariadb.jdbc.Driver");
 
       // DB에 연결
-      String url = "jdbc:mariadb://localhost:3306/mytestone";
+      String url = "jdbc:mariadb://localhost:3306/model1";
       String id = "root";
       String pwd = "12345";
       con = DriverManager.getConnection(url, id, pwd);
