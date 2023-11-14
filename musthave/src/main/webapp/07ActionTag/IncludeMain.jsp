@@ -27,6 +27,7 @@
 <%--액션 태그 방식--%>
 <h3>액션 태그로 페이지 포함하기</h3>
 <jsp:include page="./inc/OuterPage2.jsp"/>
+<%--페이지 내에서 카테고리별 화면 전환을 위해 사용된다.--%>
 <jsp:include page="<%=outerPath2%>"/>
 <p>외부 파일에 선언한 변수 : <%--=newVar2--%></p>
 </body>
