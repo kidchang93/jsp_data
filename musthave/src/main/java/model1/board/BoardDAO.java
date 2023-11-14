@@ -48,20 +48,21 @@ public List<BoardDTO> selectList(Map<String, Object> map){
     query += " ORDER BY num DESC";
 
     try {
-      stmt = con.createStatement();
-      rs = stmt.executeQuery(query);
+      stmt = con.createStatement();       // 쿼리문 생성
+      rs = stmt.executeQuery(query);      // 쿼리 실행
 
-      while (rs.next()) {
-        BoardDTO dto = new BoardDTO();
+      while (rs.next()) {                 // 결과를 순회하며...
+        // 한 행(게시물 하나)의 내용을 DTO 에 저장
+        BoardDTO dto = new BoardDTO();    
 
-        dto.setNum(rs.getString("num"));
-        dto.setTitle(rs.getString("title"));
-        dto.setContent(rs.getString("content"));
-        dto.setPostdate(rs.getDate("postdate"));
-        dto.setId(rs.getString("id"));
-        dto.setVisitcount(rs.getString("visitcount"));
+        dto.setNum(rs.getString("num"));                  // 일련번호
+        dto.setTitle(rs.getString("title"));              // 제목
+        dto.setContent(rs.getString("content"));          //내용
+        dto.setPostdate(rs.getDate("postdate"));          // 작성일
+        dto.setId(rs.getString("id"));                    // 작성자 아이디
+        dto.setVisitcount(rs.getString("visitcount"));    //조회수
 
-        bbs.add(dto);
+        bbs.add(dto);                                                 // 결과 목록에 저장
       }
     } catch (Exception e){
       System.out.println("게시물 조회 중 예외 발생");
