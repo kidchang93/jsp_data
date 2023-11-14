@@ -45,7 +45,7 @@ public List<BoardDTO> selectList(Map<String, Object> map){
   if (map.get("searchWord") != null) {
     query += " WHERE " + map.get("searchField") + " "
             + " LIKE '%" + map.get("searchWord") + "%' ";
-    query += " ORDER BY num DESC";
+    query += "ORDER BY num DESC";
 
     try {
       stmt = con.createStatement();       // 쿼리문 생성
