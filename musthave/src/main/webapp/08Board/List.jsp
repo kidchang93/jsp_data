@@ -10,7 +10,7 @@
     BoardDAO dao = new BoardDAO(application);
 
     //사용자가 입력한 검색 조건을 Map에 저장
-    Map<String , Object> param = new HashMap<String, Object>();
+    Map<String, Object> param = new HashMap<String, Object>();
 
     String searchField = request.getParameter("searchField");
     String searchWord = request.getParameter("searchWord");
@@ -28,12 +28,12 @@
 <head>
     <meta charset="UTF-8">
     <title>회원제 게시판</title>
-<%--    <link rel="stylesheet" type="text/css" href="../css/StyleSheetMain.css">--%>
+
 </head>
 <body>
-<jsp:include page="../Common/Link.jsp"/> <!--공통 링크-->
+<jsp:include page="../Common/Link.jsp"/><!--공통 링크-->
 <h2>목록보기(LIST)</h2>
-<%--검색 폼--%>
+<!--검색 폼-->
 <form method="get">
     <table border="1" width="90%">
         <tr>
@@ -48,9 +48,9 @@
         </tr>
     </table>
 </form>
-<%--게시물 목록 테이블 표--%>
+<!--게시물 목록 테이블 표-->
 <table border="1" width="90%">
-<%--각 컬럼의 이름--%>
+<!--각 컬럼의 이름-->
     <tr>
         <th width="10%">번호</th>
         <th width="50%">제목</th>
@@ -58,18 +58,19 @@
         <th width="10%">조회수</th>
         <th width="15%">작성일</th>
     </tr>
-<%--목록의 내용--%>
+<!--목록의 내용-->
     <%
         if (boardLists.isEmpty()) {
-          %>
+    %>
     <tr>
         <td colspan="5" align="center">
             등록된 게시물이 없습니다^^*
         </td>
     </tr>
     <%
-        } else {
-         // 게시물이 있을 때
+        }
+        else {
+          // 게시물이 있을 때
             int virtualNum = 0; // 화면상에서의 게시물 번호
             for (BoardDTO dto : boardLists)
             {
@@ -77,14 +78,13 @@
             %>
 
     <tr align="center">
-        <td><%=virtualNum%></td> <!-- 게시물 번호-->
+        <td><%= virtualNum %></td> <!-- 게시물 번호-->
         <td align="left"> <!-- 제목(+ 하이퍼 링크) -->
-            <a href="View.jsp?num=<%=dto.getNum()%>"><%=dto.getTitle()%></a>
+            <a href="View.jsp?num=<%= dto.getNum() %>"><%= dto.getTitle() %></a>
         </td>
-<td align="center"><%=dto.getId()%></td>            <!--작성자 아이디-->
-<td align="center"><%=dto.getVisitcount()%></td>    <!--조회수-->
-<td align="center"><%=dto.getPostdate()%></td>      <!--작성일-->
-
+<td align="center"><%= dto.getId() %></td>            <!--작성자 아이디-->
+<td align="center"><%= dto.getVisitcount() %></td>    <!--조회수-->
+<td align="center"><%= dto.getPostdate() %></td>      <!--작성일-->
     </tr>
     <%
         }
