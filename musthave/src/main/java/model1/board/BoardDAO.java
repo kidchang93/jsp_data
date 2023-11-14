@@ -11,7 +11,7 @@ public class BoardDAO extends JDBConnect {
   public BoardDAO(ServletContext application){
       super(application);
   }
-
+  //----------------------------------------------------------------------------------- DAO
   // 검색 조건에 맞는 게시물의 개수를 반환 합니다.
   public int selectCount(Map<String, Object> map) {
     int totalCount = 0; // 결과(게시물 수)를 담을 변수
@@ -34,9 +34,12 @@ public class BoardDAO extends JDBConnect {
 
     return totalCount;
   }
+
+  //----------------------------------------------------------------------------------- DTO
   // 검색 조건에 맞는 게시물 목록을 반환합니다.
 public List<BoardDTO> selectList(Map<String, Object> map){
-    List<BoardDTO> bbs = new Vector<BoardDTO>(); // 결과(게시물 목록)를 담을 변수
+    List<BoardDTO> bbs = new Vector<BoardDTO>();
+                                // 결과(게시물 목록)를 담을 변수
 
   String query = "SELECT * FROM board";
   if (map.get("searchWord") != null) {
