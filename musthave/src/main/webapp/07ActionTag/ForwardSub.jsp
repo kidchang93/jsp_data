@@ -1,17 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<%
-    pageContext.setAttribute("pAttr","김유신");
-    request.setAttribute("rAttr","계백");
-%>
-
 <html>
 <head>
     <meta charset="UTF-8">
     <title>액션태그 - forward</title>
 </head>
 <body>
-<h2>액션 태그를 이용한 포워딩</h2>
-<jsp:forward page="/07ActionTag/ForwardMain.jsp"/>
+<h2>포워드 결과</h2>
+<ul>
+    <li>page 영역 : <%=pageContext.getAttribute("pAttr")%></li>
+    <li>request 영역 : <%=request.getAttribute("rAttr")%></li>
+
+</ul>
 </body>
 </html>
