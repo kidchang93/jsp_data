@@ -36,7 +36,7 @@ public class BoardDAO extends JDBConnect {
     return totalCount;
   }
 
-  // 검색 조건에 맞는 게시물 목록을 반환합니다.
+  // 검색 조건에 맞는 게시물 목록을 반환합니다.(페이징 기능 지원)
   public List<BoardDTO> selectList(Map<String, Object> map) {
     List<BoardDTO> bbs = new Vector<BoardDTO>();  // 결과(게시물 목록)를 담을 변수
 
@@ -71,6 +71,58 @@ public class BoardDAO extends JDBConnect {
 
     return bbs;
   }
+  // 검색 조건에 맞는 게시물 목록을 반환합니다.(페이징 기능 지원)
+
+  public List<BoardDTO> selectListPage(Map<String, Object> map) {
+    List<BoardDTO> bbs = new Vector<BoardDTO>(); // 결과(게시물 목록)를 담을 변수
+
+    // 쿼리문 템플릿
+    String query = "SELECT * FROM ("
+            + "SELECT ROW_NUMBER() OVER() AS rownum, num, title, content, id, postdate, visitcount"
+            + "FROM ( SELECT * FROM board";
+
+    // 검색 조건 추가
+    if (map.get("searchWord") != null) {
+      query += " WHERE " + map.get("searchField")
+              + "Like '%" + map.get("searchWord") +"%' ";
+    }
+
+    query += " ORDER BY num DESC "
+            + ") AS subquery "
+            + ") AS result"
+            + "LIMIT 10;";
+    try {
+      // 쿼리문 완성
+      psmt = con.prepareStatement(query);
+      psmt.setString(1, map.get("start").toString());
+      psmt.setString(2, map.get("end").toString());
+
+      // 쿼리문 실행
+      rs = psmt.executeQuery();
+
+      while (rs.next()) {  // 결과를 순화하며...
+        // 한 행(게시물 하나)의 내용을 DTO에 저장
+        BoardDTO dto = new BoardDTO();
+
+        dto.setNum(rs.getString("num"));          // 일련번호
+        dto.setTitle(rs.getString("title"));      // 제목
+        dto.setContent(rs.getString("content"));  // 내용
+        dto.setPostdate(rs.getDate("postdate"));  // 작성일
+        dto.setId(rs.getString("id"));            // 작성자 아이디
+        dto.setVisitcount(rs.getString("visitcount"));  // 조회수
+
+        // 반환할 결과 목록에 게시물 추가
+        bbs.add(dto);  // 결과 목록에 저장
+      }
+    } catch (Exception e) {
+      System.out.println("게시물 조회 중 예외 발생");
+      e.printStackTrace();
+    }
+    
+    // 목록 반환
+    return bbs;
+  }
+
 
   // 게시글 데이터를 받아 DB에 추가합니다.
   public int insertWrite(BoardDTO dto) {
