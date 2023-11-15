@@ -53,7 +53,12 @@
                     if (session.getAttribute("UserId") != null
                             && session.getAttribute("UserId").toString().equals(dto.getId())){
                 %>
-
+                <button type="button" onclick="location.href='Edit.jsp?num=<%= dto.getNum() %>';">수정하기</button>
+                <button type="button" onclick="deletePost();">삭제하기</button>
+<%
+    }
+%>
+                <button type="button" onclick="location.href='List.jsp';">목록보기</button>
 
             </td>
         </tr>
