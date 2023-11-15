@@ -175,8 +175,19 @@ public int updateEdit(BoardDTO dto) {
 
     return result;
 }
+
+// 지정한 게시물을 삭제합니다.
 public int deletePost(BoardDTO dto) {
     int result = 0;
+
+    try {
+      // 쿼리문 템플릿
+      String query = "DELETE FROM board WHERE num=?";
+
+      // 쿼리문 완성
+      psmt = con.prepareStatement(query);
+      psmt.setString(1,);
+    }
 }
 
 }
