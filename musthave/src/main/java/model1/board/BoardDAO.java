@@ -186,8 +186,15 @@ public int deletePost(BoardDTO dto) {
 
       // 쿼리문 완성
       psmt = con.prepareStatement(query);
-      psmt.setString(1,);
+      psmt.setString(1, dto.getNum());
+
+      // 쿼리문 실행
+      result = psmt.executeUpdate();
+    } catch (Exception e){
+      System.out.println("게시물 삭제 중 예외 발생");
+      e.printStackTrace();
     }
+    return result;
 }
 
 }
