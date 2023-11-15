@@ -131,5 +131,23 @@ public class BoardDAO extends JDBConnect {
     return dto;
   }
 
+  // 지정한 게시물의 조회수를 1 증가 시킵니다.
+public void updateVisitCount(String num) {
+    // 쿼리문 준비
+  String query = "UPDATE board SET "
+          + " visitcount=visitcount+1 "
+          + " WHERE num=?";
+
+  try {
+    psmt = con.prepareStatement(query);
+    psmt.setString(1, num); // 인파라미터를 일련번호로 설정
+    psmt.executeQuery();                  // 쿼리 실행
+  }
+  catch (Exception e) {
+    System.out.println("게시물 조회수 증가 중 예외 발생");
+    e.printStackTrace();
+  }
+
+}
 
 }
