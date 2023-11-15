@@ -51,7 +51,7 @@ public class BoardDTO {
     return postdate;
   }
 
-  public void setPostdate(Date postdate) {
+  public void setPostdate(java.sql.Date postdate) {
     this.postdate = postdate;
   }
 
