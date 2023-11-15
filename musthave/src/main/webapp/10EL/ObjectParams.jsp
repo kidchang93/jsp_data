@@ -13,8 +13,8 @@
 %>
 
 <jsp:forward page="ObjectResult.jsp">
-    <jsp:param value="10" name="firstNum"></jsp:param>
-    <jsp:param value="20" name="secondNum"></jsp:param>
+    <jsp:param value="10" name="firstNum" />
+    <jsp:param value="20" name="secondNum"/>
 </jsp:forward>
 </body>
 </html>
