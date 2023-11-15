@@ -165,7 +165,15 @@ public int updateEdit(BoardDTO dto) {
       psmt.setString(2, dto.getContent());
       psmt.setString(3, dto.getNum());
 
+      // 쿼리문 실행
+      result = psmt.executeUpdate();
     }
+    catch (Exception e) {
+      System.out.println("게시물 수정 중 예외 발생");
+      e.printStackTrace();
+    }
+
+    return result;
 }
 
 }
