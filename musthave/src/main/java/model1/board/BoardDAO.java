@@ -84,7 +84,7 @@ public class BoardDAO extends JDBConnect {
               + " VALUES ( "
               + " ?, ?, ?, 0)";
 
-      psmt = con.prepareStatement(query);
+      psmt = con.prepareStatement(query); // 동적 쿼리
       psmt.setString(1, dto.getTitle());
       psmt.setString(2, dto.getContent());
       psmt.setString(3, dto.getId());
@@ -97,4 +97,6 @@ public class BoardDAO extends JDBConnect {
     }
     return result;
   }
+
+
 }
