@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ include file="IsLoggedIn.jsp"%> <!--로그인 확인-->
+<%@ include file="./IsLoggedIn.jsp"%> <!--로그인 확인-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +37,7 @@
         <tr>
             <td>내용</td>
             <td>
-                <textarea name="content" style="width: 90%; height: 100px;">
-                </textarea>
+                <textarea name="content" style="width: 90%; height: 100px;"></textarea>
             </td>
         </tr>
         <tr>
