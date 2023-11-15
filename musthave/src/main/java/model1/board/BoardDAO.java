@@ -78,7 +78,7 @@ public class BoardDAO extends JDBConnect {
 
     // 쿼리문 템플릿
     String query = "SELECT * FROM ("
-            + "SELECT ROW_NUMBER() OVER() AS rownum, num, title, content, id, postdate, visitcount"
+            + "SELECT ROW_NUMBER() OVER() AS num"
             + "FROM ( SELECT * FROM board";
 
     // 검색 조건 추가
