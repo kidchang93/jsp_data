@@ -71,4 +71,9 @@ public class BoardDAO extends JDBConnect {
 
     return bbs;
   }
+
+  // 게시글 데이터를 받아 DB에 추가합니다.
+  public int insertWrite(BoardDTO dto) {
+    int result = 0;
+  }
 }
