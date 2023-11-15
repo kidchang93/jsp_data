@@ -98,5 +98,38 @@ public class BoardDAO extends JDBConnect {
     return result;
   }
 
+  // 지정한 게시물을 찾아 내용을 반환합니다.
+  public BoardDTO selectView(String num) {
+    BoardDTO dto = new BoardDTO();
+
+    // 쿼리문 준비
+    String query = "SELECT B.*, M.name "
+            + " FROM member M INNER JOIN board B "
+            + " ON M.id=B.id "
+            + " WHERE num=?";
+    
+    try {
+      psmt = con.prepareStatement(query);
+      psmt.setString(1, num);   // 인파라미터를 일련번호로 설정
+      rs = psmt.executeQuery();              // 쿼리 실행
+
+      // 결과 처리
+      if (rs.next()) {
+        dto.setNum(rs.getString(1));
+        dto.setTitle(rs.getString(2));
+        dto.setContent(rs.getString("content"));
+        dto.setPostdate(rs.getDate("postdate"));
+        dto.setId(rs.getString("id"));
+        dto.setVisitcount(rs.getString(6));
+        dto.setName(rs.getString("name"));
+      }
+    }
+    catch (Exception e){
+      System.out.println("게시물 상세보기 중 예외 발생");
+      e.printStackTrace();
+    }
+    return dto;
+  }
+
 
 }
