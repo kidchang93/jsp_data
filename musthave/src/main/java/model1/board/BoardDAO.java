@@ -175,5 +175,8 @@ public int updateEdit(BoardDTO dto) {
 
     return result;
 }
+public int deletePost(BoardDTO dto) {
+    int result = 0;
+}
 
 }
