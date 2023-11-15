@@ -26,6 +26,6 @@
 <ul>
     <li>${ scopeValue }</li>
 </ul>
-<%--<jsp:forward page = "ImplicitForwardResult.jsp" />--%>
+<jsp:forward page = "ImplicitForwardResult.jsp" />
 </body>
 </html>
