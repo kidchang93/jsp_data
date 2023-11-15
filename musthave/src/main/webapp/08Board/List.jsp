@@ -27,6 +27,14 @@
 <head>
     <meta charset="UTF-8">
     <title>회원제 게시판</title>
+    <script>
+        window.onpageshow = function(event) {
+            //back 이벤트 일 경우
+            if (event.persisted) {
+                location.reload(true);
+            }
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="../Common/Link.jsp" />  <!-- 공통 링크 -->
