@@ -76,10 +76,10 @@ public class BoardDAO extends JDBConnect {
   public List<BoardDTO> selectListPage(Map<String, Object> map) {
     List<BoardDTO> bbs = new Vector<BoardDTO>(); // 결과(게시물 목록)를 담을 변수
 
-    // 오라클 쿼리문 템플릿
-    String query = " SELECT * FROM ( "
-            + "    SELECT Tb.*, ROWNUM rNum FROM ( "
-            + "        SELECT * FROM board ";
+    // 쿼리문 템플릿
+    String query = "SELECT * FROM ( "
+            + " SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, B.* "
+            + " FROM board B, (SELECT @ROWNUM := 0 ) TMP ";
 
     // 검색 조건 추가
     if (map.get("searchWord") != null) {
@@ -87,10 +87,8 @@ public class BoardDAO extends JDBConnect {
               + " LIKE '%" + map.get("searchWord") + "%' ";
     }
 
-    query += "      ORDER BY num DESC "
-            + "     ) Tb "
-            + " ) "
-            + " WHERE rNum BETWEEN ? AND ?";
+    query += "ORDER BY num DESC)SUB"
+            + " WHERE ROWNUM BETWEEN ? AND ? ;";
 
     try {
       // 쿼리문 완성
