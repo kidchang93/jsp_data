@@ -76,7 +76,7 @@ public class BoardDAO extends JDBConnect {
   public List<BoardDTO> selectListPage(Map<String, Object> map) {
     List<BoardDTO> bbs = new Vector<BoardDTO>(); // 결과(게시물 목록)를 담을 변수
 
-    // 쿼리문 템플릿
+    // 오라클 쿼리문 템플릿
     String query = " SELECT * FROM ( "
             + "    SELECT Tb.*, ROWNUM rNum FROM ( "
             + "        SELECT * FROM board ";
