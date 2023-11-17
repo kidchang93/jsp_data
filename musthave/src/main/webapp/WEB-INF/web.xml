@@ -53,12 +53,12 @@
 <!--    </servlet-mapping>-->
 
 <!--    DirectWervletPrint 연결 -->
-        <servlet>
-            <servlet-name>HelloServlet</servlet-name>
-            <servlet-class>servlet.DirectServletPrint</servlet-class>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>HelloServlet</servlet-name>
-            <url-pattern>/12Servlet/DirectServletPrint.do</url-pattern>
-        </servlet-mapping>
+<!--        <servlet>-->
+<!--            <servlet-name>HelloServlet</servlet-name>-->
+<!--            <servlet-class>servlet.DirectServletPrint</servlet-class>-->
+<!--        </servlet>-->
+<!--        <servlet-mapping>-->
+<!--            <servlet-name>HelloServlet</servlet-name>-->
+<!--            <url-pattern>/12Servlet/DirectServletPrint.do</url-pattern>-->
+<!--        </servlet-mapping>-->
 </web-app>
