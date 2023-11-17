@@ -1,16 +1,34 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2023-11-17
-  Time: 오후 3:43
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>FileUpload</title>
 </head>
+<script>
+    function validateFomrm(form) {
+        if (form.title.value == "") {
+            alert("제목을 입력하세요.");
+            form.title.focus();
+            return false;
+        }
+        if (form.attachedFile.value == "") {
+            alert("첨부 파일은 필수 입력입니다.");
+            return false;
+        }
+    }
+</script>
 <body>
-
+<h3>파일 업로드</h3>
+<span style="color: red;">${errorMessage}</span>
+<form name="fileForm" method="post" enctype="multipart/form-data"
+action="UploadProcess.do" onsubmit="return validateForm(this);">
+제목 : <input type="text" name="title" /><br>
+카테고리(선택사항) :
+<input type="checkbox" name="cate" value="사진" checked/>사진
+<input type="checkbox" name="cate" value="과제" checked/>사진
+<input type="checkbox" name="cate" value="워드" checked/>사진
+<input type="checkbox" name="cate" value="음원" checked/>사진<br>
+첨부 파일 : <input type="file" name="attachedFile" /><br>
+<input type="submit" value="전송하기" />
+</form>
 </body>
 </html>
