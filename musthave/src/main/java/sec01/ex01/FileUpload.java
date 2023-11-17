@@ -28,7 +28,7 @@ public class FileUpload extends HttpServlet {
     request.setCharacterEncoding("utf-8");
     String encoding = "utf-8";
     //업로드할 파일 경로를 지정합니다.
-    File currentDirPath = new File("d://file_repo");
+    File currentDirPath = new File("e://file_repo");
     DiskFileItemFactory factory = new DiskFileItemFactory();
     // 파일 경로 설정
     factory.setRepository(currentDirPath);
