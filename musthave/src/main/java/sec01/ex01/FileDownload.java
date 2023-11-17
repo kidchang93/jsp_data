@@ -21,7 +21,8 @@ public class FileDownload extends HttpServlet {
     doHandle(request, response);
   }
 
-  public void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+  public void doHandle(HttpServletRequest request, HttpServletResponse response)
+          throws ServletException, IOException{
     request.setCharacterEncoding("utf-8");
     response.setContentType("text/html; charset=utf-8");
     String file_repo = "e:\\file_repo";
@@ -30,10 +31,13 @@ public class FileDownload extends HttpServlet {
     OutputStream out = response.getOutputStream();
     String downFile = file_repo + "\\" + fileName;
     File f = new File(downFile);
+
     response.setHeader("Cache-Control", "no-cache");
     response.addHeader("Content-disposition", "attachment; fileName=" + fileName);
+
     FileInputStream in = new FileInputStream(f);
     byte[] buffer = new byte[1024 * 8];
+
     while(true){
       int count = in.read(buffer);
       if (count == -1)
