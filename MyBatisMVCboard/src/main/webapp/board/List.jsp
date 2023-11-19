@@ -14,7 +14,7 @@
 <h2>파일 첨부형 게시판 - 목록 보기(List)</h2>
 
 <!-- 검색 폼 -->
-<form method="get">
+<form method="get" >
     <table border="1" width="90%">
         <tr>
             <td align="center">
