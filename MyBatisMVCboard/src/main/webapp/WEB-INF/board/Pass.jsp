@@ -18,7 +18,7 @@
 </head>
 <body>
 <h2>파일 첨부형 게시판 - 비밀번호 검증(Pass)</h2>
-<form name="writeFrm" method="post" action="../mvcboard/pass.do" onsubmit="return validateForm(this);">
+<form name="writeFrm" method="post" action="../board/pass.do" onsubmit="return validateForm(this);">
     <input type="hidden" name="idx" value="${ param.idx }" />
     <input type="hidden" name="mode" value="${ param.mode }" />
     <table border="1" width="90%">
@@ -32,7 +32,7 @@
             <td colspan="2" align="center">
                 <button type="submit">검증하기</button>
                 <button type="reset">RESET</button>
-                <button type="button" onclick="location.href='../mvcboard/list.do';">
+                <button type="button" onclick="location.href='../board/list.do';">
                     목록 바로가기
                 </button>
             </td>

@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>JSP - Hello World</title>
 </head>
 <body>
-<%
-  response.sendRedirect(request.getContextPath() + "/mvcboard/list.do");
-%>
+<h1><%= "Hello World!" %></h1>
+<br/>
+<a href="hello-servlet">Hello Servlet</a>
 </body>
 </html>

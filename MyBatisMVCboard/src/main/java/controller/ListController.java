@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name = "ListController" , value= "board/list.do")
+@WebServlet("/board/list.do")
 public class ListController extends HttpServlet {
 
 //    private BoardDAO dao = new BoardDAO();
@@ -29,7 +29,9 @@ public class ListController extends HttpServlet {
             map.put("searchWord",searchWord);
     }
     int totalCount = dao.selectCount(map);
+    req.getRequestDispatcher("/board/list.jsp").forward(req,resp);
     }
+
 
 
 }
