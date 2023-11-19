@@ -1,5 +1,6 @@
-package mybatis;
+package mybatis.factory;
 
+import mybatis.config.MyBatisConfig;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 

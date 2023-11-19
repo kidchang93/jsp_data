@@ -1,12 +1,14 @@
-package mybatis;
+package mybatis.mapper;
 
 import model.BoardVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
+
 @Mapper
-public class BoardMapper {
+public interface BoardMapper {
+
     int selectCount(Map<String, Object> map);
 
     List<BoardVO> selectListPage(Map<String, Object> map);
@@ -26,4 +28,5 @@ public class BoardMapper {
     int deletePost(String idx);
 
     int updatePost(BoardVO dto);
+
 }

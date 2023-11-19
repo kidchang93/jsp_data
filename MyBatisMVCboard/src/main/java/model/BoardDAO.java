@@ -1,9 +1,10 @@
 package model;
 
-import mybatis.BoardMapper;
-import mybatis.MyBatisSessionFactory;
+import mybatis.mapper.BoardMapper;
+import mybatis.factory.MyBatisSessionFactory;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

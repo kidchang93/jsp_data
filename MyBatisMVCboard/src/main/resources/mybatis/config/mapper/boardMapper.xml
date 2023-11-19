@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="src.main.java.mybatis.BoardMapper">
+<mapper namespace="mybatis.mapper.BoardMapper">
     <select id="selectCount" parameterType="map" resultType="int">
         select count(*)
         from board
@@ -22,7 +22,7 @@
 
     <select id="selectListPage" parameterType="map" resultType="model.BoardVO">
         SELECT *
-        FROM mvcboard
+        FROM board
         <if test="searchWord != null and !searchWord.equals('')">
             WHERE
             <choose>
@@ -38,14 +38,14 @@
 
     <insert id="insertWrite" parameterType="model.BoardVO">
         INSERT
-        INTO mvcboard(idx, name, title, content, ofile, sfile, pass)
+        INTO board(idx, name, title, content, ofile, sfile, pass)
         VALUES(#{idx}, #{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
     </insert>
 
     <select id="selectListPageWithPaging" parameterType="map" resultType="model.BoardVO">
         <![CDATA[
         SELECT *
-        FROM mvcboard
+        FROM board
         WHERE idx > 0
         ]]>
         <if test="searchWord != null and !searchWord.equals('')">
@@ -65,7 +65,7 @@
 
     <select id="selectView" parameterType="String" resultType="model.BoardVO">
         select *
-        from mvcboard
+        from board
         where idx = #{idx}
         <!--Expected one result (or null) to be returned by selectOne(), but found: 41
            if nothing match, return null
@@ -73,32 +73,32 @@
     </select>
 
     <update id="updateVisitCount" parameterType="String">
-        update mvcboard
+        update board
         set visitcount = visitcount + 1
         where idx = #{idx}
         <!--        이 실행 결과로 인해서 실제 update된 row의 개수를 return-->
     </update>
 
     <update id="downCountPlus" parameterType="String">
-        update mvcboard
+        update board
         set downcount = downcount + 1
         where idx = #{idx}
     </update>
 
     <select id="confirmPassword" parameterType="map">
         select count(idx)
-        from mvcboard
+        from board
         where pass = #{pass} and idx = #{idx}
     </select>
 
     <delete id="deletePost">
         delete
-        from mvcboard
+        from board
         where idx = #{idx}
     </delete>
 
     <update id="updatePost" parameterType="model.BoardVO">
-        update mvcboard
+        update board
         set title = #{title}, name = #{name},
         content = #{content}, ofile = #{ofile}, sfile = #{sfile}
         where idx = #{idx} and pass = #{pass}
