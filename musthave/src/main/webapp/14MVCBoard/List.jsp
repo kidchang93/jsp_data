@@ -6,7 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>파일 첨부형 게시판</title>
-    <style>a{text-decoration:none;}</style>
+    <style>
+        a {text-decoration:none;}
+    </style>
 </head>
 <body>
 <h2>파일 첨부형 게시판 - 목록 보기(List)</h2>
