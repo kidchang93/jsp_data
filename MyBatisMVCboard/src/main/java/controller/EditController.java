@@ -28,7 +28,7 @@ public class EditController extends HttpServlet {
         BoardDAO dao = new BoardDAO();
         BoardVO vo = dao.selectView(idx);
         req.setAttribute("vo",vo);
-        req.getRequestDispatcher(req.getContextPath() + "/board/edit.jsp").forward(req,resp);
+        req.getRequestDispatcher(req.getContextPath() + "/board/Edit.jsp").forward(req,resp);
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet("/board/write.do")
+@WebServlet("/board/view.do")
 public class ViewController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,6 +38,6 @@ public class ViewController extends HttpServlet {
         }
         req.setAttribute("vo",vo);
         req.setAttribute("isImage",isImage);
-        req.getRequestDispatcher("/board/view.jsp").forward(req,resp);
+        req.getRequestDispatcher("/board/View.jsp").forward(req,resp);
     }
 }

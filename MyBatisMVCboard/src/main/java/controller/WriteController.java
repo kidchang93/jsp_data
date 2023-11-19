@@ -17,13 +17,13 @@ import java.io.IOException;
     maxFileSize = 1024 * 1024 *1,
     maxRequestSize = 1024 * 1024 * 10
 )
-@WebServlet
+@WebServlet("/board/write.do")
 public class WriteController extends HttpServlet {
 private BoardDAO dao = new BoardDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/board/write.jsp").forward(req,resp);
+        req.getRequestDispatcher("/board/Write.jsp").forward(req,resp);
     }
 
     @Override

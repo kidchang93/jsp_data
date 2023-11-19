@@ -29,7 +29,7 @@ public class ListController extends HttpServlet {
             map.put("searchWord",searchWord);
     }
     int totalCount = dao.selectCount(map);
-    req.getRequestDispatcher("/board/list.jsp").forward(req,resp);
+    req.getRequestDispatcher("/board/List.jsp").forward(req,resp);
     }
 
 
