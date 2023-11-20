@@ -71,7 +71,7 @@ public class BoardDAO {
         sqlSession.close();
     }
 
-    public void downCoundPlus(String idx) {
+    public void downCountPlus(String idx) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         int result = mapper.downCountPlus(idx);

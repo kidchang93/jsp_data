@@ -1,20 +1,9 @@
 package Util;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.JspWriter;
 import java.io.PrintWriter;
 
 public class JSFunction {
-    public static void alertLocation(String msg, String url, JspWriter out) {
-        try {
-            String script = "<script>"  // 삽입할 자바스크립트 코드
-                    + "    alert('" + msg + "');"
-                    + "    location.href='" + url + "';"
-                    + "</script>";
-            out.println(script);
-        }
-        catch (Exception e) {}
-    }
 
     public static void alertLocation(HttpServletResponse resp, String msg, String url) {
         try {
