@@ -20,21 +20,26 @@ public class FileUtil {
     //파일 업로드
     public static String uploadFile(HttpServletRequest req, String sDirectory)
             throws ServletException, IOException {
-        // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
+        // 지정된 디렉토리 및 상위 디렉토리가 존재하는지 확인하고, 없는 경우 생성합니다.
         Path saveDirectoryPath = Paths.get(sDirectory);
         Files.createDirectories(saveDirectoryPath);
 
+        // 요청에서 파일 파트를 검색합니다.
         Part part = req.getPart("ofile");
 
+        // 파일 파트의 content-disposition 헤더에서 원본 파일 이름을 추출합니다.
         String partHeader = part.getHeader("content-disposition");
         System.out.println("partHeader=" + partHeader);
 
+        // content-disposition 헤더를 분할하여 파일 이름을 가져오고, 주변 따옴표를 제거합니다.
         String[] phArr = partHeader.split("filename=");
         String originalFileName = phArr[1].trim().replace("\"", "");
 
+        // 원본 파일 이름이 비어 있지 않은 경우, 파일을 지정된 디렉토리에 작성합니다.
         if (!originalFileName.isEmpty()) {
             part.write(sDirectory + File.separator + originalFileName);
         }
+        // 업로드된 파일의 이름을 반환합니다.
         return originalFileName;
     }
 
