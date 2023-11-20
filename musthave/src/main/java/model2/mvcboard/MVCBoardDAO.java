@@ -58,7 +58,7 @@ public class MVCBoardDAO extends DBConnPool {
                     + " LIKE '%" + map.get("searchWord") + "%' ";
         }
 
-        query += " ORDER BY idx DESC ) T " +
+        query += " ORDER BY idx DESC ) SUB " +
                 " WHERE ROWNUM BETWEEN ? AND ? ;";
         try {
             psmt = con.prepareStatement(query);
