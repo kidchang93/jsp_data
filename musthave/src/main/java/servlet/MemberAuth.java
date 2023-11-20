@@ -3,14 +3,15 @@ package servlet;
 import membership.MemberDAO;
 import membership.MemberDTO;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+//@WebServlet("/12Servlet/MemberAuth.mvc")
 public class MemberAuth extends HttpServlet {
   private static final long serialVersionUID = 1L;
   MemberDAO dao;
@@ -50,12 +51,14 @@ public class MemberAuth extends HttpServlet {
     String memberName = memberDTO.getName();
     if (memberName != null) { // 일치하는 회원 찾음
       req.setAttribute("authMessage", memberName + "회원님 안녕하세요^^");
-    } else { // 일치하는 회원 없음
-      if (admin_id.equals(id)) {
-        req.setAttribute("authMessage", "귀하는 회원이 아닙니다.");
-      }
-      req.getRequestDispatcher("/12Servlet/MemberAuth.jsp").forward(req, resp);
+    } 
+    else { // 일치하는 회원 없음
+      if (admin_id.equals(id))
+          req.setAttribute("authMessage", admin_id + "는 최고 관리자 입니다.");
+      else // 비회원
+          req.setAttribute("authMessage","귀하는 회원이 아닙니다.");
     }
+    req.getRequestDispatcher("/12Servlet/MemberAuth.jsp").forward(req, resp);
   }
     @Override
     public void destroy () {
