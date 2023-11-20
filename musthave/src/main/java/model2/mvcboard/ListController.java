@@ -64,6 +64,8 @@ public class ListController extends HttpServlet {
         map.put("pageSize", pageSize);
         map.put("pageNum", pageNum);
 
+
+
         // 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
         req.setAttribute("boardLists", boardLists);
         req.setAttribute("map", map);

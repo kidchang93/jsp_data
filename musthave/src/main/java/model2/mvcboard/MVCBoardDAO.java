@@ -35,20 +35,31 @@ public class MVCBoardDAO extends DBConnPool {
     // 검색 조건에 맞는 게시물 목록을 반환합니다(페이징 기능 지원).
     public List<MVCBoardDTO> selectListPage(Map<String, Object> map) {
         List<MVCBoardDTO> board = new Vector<MVCBoardDTO>();
-        String query = "SELECT * FROM ( "
-                + " SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, bb.* "
-                + " FROM mvcboard bb, (SELECT @ROWNUM := 0 ) TMP ";
+//        String query = "SELECT * FROM ( "
+//                + " SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, bb.* "
+//                + " FROM mvcboard bb, (SELECT @ROWNUM := 0 ) TMP ";
+//
+//// 검색 조건 추가
+//        if (map.get("searchWord") != null) {
+//            query += " WHERE " + map.get("searchField")
+//                    + " LIKE '%" + map.get("searchWord") + "%' ";
+//        }
+//
+//        query += "ORDER BY idx DESC)SUB"
+//                + " WHERE ROWNUM BETWEEN ? AND ? ;";
 
-// 검색 조건 추가
+        String query = "SELECT * FROM ( "
+                + " SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, b.* "
+                + " FROM  mvcboard b,(SELECT @ROWNUM := 0 ) TMP ";
+
+        // 검색 조건 추가
         if (map.get("searchWord") != null) {
             query += " WHERE " + map.get("searchField")
                     + " LIKE '%" + map.get("searchWord") + "%' ";
         }
 
-        query += "ORDER BY idx DESC)SUB"
-                + " WHERE ROWNUM BETWEEN ? AND ? ;";
-
-
+        query += " ORDER BY idx DESC ) T " +
+                " WHERE ROWNUM BETWEEN ? AND ? ;";
         try {
             psmt = con.prepareStatement(query);
             psmt.setString(1, map.get("start").toString());
