@@ -28,10 +28,10 @@ public class BoardDAO {
         return result;
     }
 
-    public int insertWrite(BoardVO dto) {
+    public int insertWrite(BoardVO vo) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-        int result = mapper.insertWrite(dto);
+        int result = mapper.insertWrite(vo);
         if (result == 1) {
             sqlSession.commit();
             System.out.println("새로운 mvcboard 저장 성공");
@@ -45,7 +45,7 @@ public class BoardDAO {
     public List<BoardVO> getListWithPaging(Map<String, Object> map) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-        List<BoardVO> result = mapper.selectListPageWithPaging(map);
+        List<BoardVO> result = mapper.getListWithPaging(map);
         sqlSession.close();
         return result;
     }
@@ -53,9 +53,9 @@ public class BoardDAO {
     public BoardVO selectView(String idx) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-        BoardVO dto = mapper.selectView(idx);
+        BoardVO vo = mapper.selectView(idx);
         sqlSession.close();
-        return dto;
+        return vo;
     }
 
     public void updateVisitCount(String idx) {
@@ -110,10 +110,10 @@ public class BoardDAO {
         return result;
     }
 
-    public int updatePost(BoardVO dto) {
+    public int updatePost(BoardVO vo) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
-        int result = mapper.updatePost(dto);
+        int result = mapper.updatePost(vo);
         if (result == 1) {
             sqlSession.commit();
         } else {

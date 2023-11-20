@@ -14,9 +14,9 @@ public interface BoardMapper {
 
     List<BoardVO> selectListPage(Map<String, Object> map);
 
-    int insertWrite(BoardVO dto);
+    int insertWrite(BoardVO vo);
 
-    List<BoardVO> selectListPageWithPaging(Map<String, Object> map);
+    List<BoardVO> getListWithPaging(Map<String, Object> map);
 
     BoardVO selectView(String idx);
 
@@ -28,7 +28,7 @@ public interface BoardMapper {
 
     int deletePost(String idx);
 
-    int updatePost(BoardVO dto);
+    int updatePost(BoardVO vo);
 
-    List<BoardVO> getListWithPaging(Criteria cri);
+//    List<BoardVO> getListWithPaging(Criteria cri);
 }

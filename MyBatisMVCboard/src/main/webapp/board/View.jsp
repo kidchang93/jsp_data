@@ -45,7 +45,7 @@
         <td>
             <c:if test="${ not empty vo.ofile }">
                 ${ vo.ofile }
-                <a href="../board/download.do?ofile=${ vo.ofile }&sfile=${ vo.sfile }&idx=${ vo.idx }">
+                <a href="${pageContext.request.contextPath}/board/download.do?ofile=${ vo.ofile }&sfile=${ vo.sfile }&idx=${ vo.idx }">
                     [다운로드]
                 </a>
             </c:if>
@@ -57,13 +57,13 @@
     <!-- 하단 메뉴(버튼) -->
     <tr>
         <td colspan="4" align="center">
-            <button type="button" onclick="location.href='../board/pass.do?mode=edit&idx=${ param.idx }';">
+            <button type="button" onclick="location.href='${pageContext.request.contextPath}/board/pass.do?mode=edit&idx=${ param.idx }';">
                 수정하기
             </button>
-            <button type="button" onclick="location.href='../board/pass.do?mode=delete&idx=${ param.idx }';">
+            <button type="button" onclick="location.href='${pageContext.request.contextPath}/board/pass.do?mode=delete&idx=${ param.idx }';">
                 삭제하기
             </button>
-            <button type="button" onclick="location.href='../board/list.do';">
+            <button type="button" onclick="location.href='${pageContext.request.contextPath}/board/list.do';">
                 목록 바로가기
             </button>
         </td>

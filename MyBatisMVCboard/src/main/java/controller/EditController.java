@@ -60,7 +60,7 @@ public class EditController extends HttpServlet {
         vo.setContent(content);
         vo.setPass(pass);
 
-        if (originalFileName != ""){
+        if (originalFileName != "" && !originalFileName.equals("") && !originalFileName.isEmpty()){
             String savedFileName = FileUtil.renameFile(saveDirectory, originalFileName);
             vo.setOfile(originalFileName);
             vo.setSfile(savedFileName);

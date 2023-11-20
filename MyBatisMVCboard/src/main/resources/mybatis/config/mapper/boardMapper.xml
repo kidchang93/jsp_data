@@ -60,7 +60,7 @@
             </choose>
         </if>
         order by idx desc
-        LIMIT #{pageNum}, #{amount}
+        LIMIT #{pageNum}, 10
     </select>
 
     <select id="selectView" parameterType="String" resultType="model.BoardVO">
