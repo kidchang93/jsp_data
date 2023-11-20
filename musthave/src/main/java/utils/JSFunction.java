@@ -45,6 +45,8 @@ public class JSFunction {
                 + "</script>";
         writer.print(script);
       } catch (Exception e) {
+        System.out.println("URL로 이동중 오류 발생");
+        e.printStackTrace();
       }
     }
 
@@ -59,6 +61,8 @@ public class JSFunction {
                 + "</script>";
         writer.print(script);
       } catch (Exception e) {
+        System.out.println("이전 페이지로 가는 중 오류 발생");
+        e.printStackTrace();
       }
     }
   }
