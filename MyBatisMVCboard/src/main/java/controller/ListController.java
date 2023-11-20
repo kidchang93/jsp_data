@@ -60,6 +60,7 @@ public class ListController extends HttpServlet {
         map.put("pagingImg", pagingImg);
         map.put("totalCount", totalCount);
         map.put("pageSize", pageSize);
+        map.put("blockPage",blockPage);
         map.put("pageNum", pageNum);
 
         req.setAttribute("map", map);
