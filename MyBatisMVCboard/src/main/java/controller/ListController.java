@@ -31,9 +31,9 @@ public class ListController extends HttpServlet {
         if (searchWord != null && searchWord.trim().equals("")){
             map.put("searchField",searchField);
             map.put("searchWord",searchWord);
-    }
+        }
 
-    int totalCount = dao.selectCount(map);
+        int totalCount = dao.selectCount(map);
         List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
 
         /* 페이지 처리 start */
@@ -62,8 +62,10 @@ public class ListController extends HttpServlet {
         map.put("pageSize", pageSize);
         map.put("pageNum", pageNum);
 
+        req.setAttribute("map", map);
+        req.setAttribute("boardLists", boardLists);
 
-    req.getRequestDispatcher("/board/List.jsp").forward(req,resp);
+        req.getRequestDispatcher("/board/List.jsp").forward(req,resp);
     }
 
 
