@@ -18,23 +18,23 @@
 
     <!-- 게시글 정보 -->
     <tr>
-        <td>번호</td> <td>${ dto.idx }</td>
-        <td>작성자</td> <td>${ dto.name }</td>
+        <td>번호</td> <td>${ vo.idx }</td>
+        <td>작성자</td> <td>${ vo.name }</td>
     </tr>
     <tr>
-        <td>작성일</td> <td>${ dto.postdate }</td>
+        <td>작성일</td> <td>${ vo.postdate }</td>
         <td>조회수</td> <td>${ dto.visitcount }</td>
     </tr>
     <tr>
         <td>제목</td>
-        <td colspan="3">${ dto.title }</td>
+        <td colspan="3">${ vo.title }</td>
     </tr>
     <tr>
         <td>내용</td>
         <td colspan="3" height="100">
-            ${ dto.content }
-            <c:if test="${ not empty dto.ofile and isImage eq true }">
-                <br><img src="../Uploads/${ dto.sfile }" style="max-width:100%;"/>
+            ${ vo.content }
+            <c:if test="${ not empty vo.ofile and isImage eq true }">
+                <br><img src="../Uploads/${ vo.sfile }" style="max-width:100%;"/>
             </c:if>
         </td>
     </tr>
