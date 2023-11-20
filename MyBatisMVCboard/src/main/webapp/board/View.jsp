@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td>작성일</td> <td>${ vo.postdate }</td>
-        <td>조회수</td> <td>${ dto.visitcount }</td>
+        <td>조회수</td> <td>${ vo.visitcount }</td>
     </tr>
     <tr>
         <td>제목</td>
@@ -43,15 +43,15 @@
     <tr>
         <td>첨부파일</td>
         <td>
-            <c:if test="${ not empty dto.ofile }">
-                ${ dto.ofile }
-                <a href="../board/download.do?ofile=${ dto.ofile }&sfile=${ dto.sfile }&idx=${ dto.idx }">
+            <c:if test="${ not empty vo.ofile }">
+                ${ vo.ofile }
+                <a href="../board/download.do?ofile=${ vo.ofile }&sfile=${ vo.sfile }&idx=${ vo.idx }">
                     [다운로드]
                 </a>
             </c:if>
         </td>
         <td>다운로드수</td>
-        <td>${ dto.downcount }</td>
+        <td>${ vo.downcount }</td>
     </tr>
 
     <!-- 하단 메뉴(버튼) -->

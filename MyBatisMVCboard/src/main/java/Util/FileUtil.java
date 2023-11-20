@@ -21,8 +21,8 @@ public class FileUtil {
     public static String uploadFile(HttpServletRequest req, String sDirectory)
             throws ServletException, IOException {
         // 이 경로가 없으면 만들어줌. 상위 directory까지 전부...
-//        Path saveDirectoryPath = Paths.get(sDirectory);
-//        Files.createDirectories(saveDirectoryPath);
+        Path saveDirectoryPath = Paths.get(sDirectory);
+        Files.createDirectories(saveDirectoryPath);
 
         Part part = req.getPart("ofile");
 
