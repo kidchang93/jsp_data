@@ -1,6 +1,7 @@
 package servlet;
 
 import membership.MemberDAO;
+import membership.MemberDTO;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
@@ -29,9 +30,36 @@ public class MemberAuth extends HttpServlet {
 
   }
 
+
+
   @Override
   protected void service (HttpServletRequest req, HttpServletResponse resp)
           throws ServletException, IOException {
-    super.doGet(req, resp);
+    // 서블릿 초기화 매개변수에서 관리자 ID 받기
+    String admin_id = this.getInitParameter("admin_id");
+
+    // 인증을 요청한 ID / 패스워드
+    String id = req.getParameter("id");
+    String pass = req.getParameter("pass");
+
+    // 회원 테이블에서 인증 요청한 ID/패스워드에 해당하는 회원 찾기
+
+    MemberDTO memberDTO = dao.getMemberDTO(id, pass);
+
+    // 찾은 회원의 이름에 따른 처리
+    String memberName = memberDTO.getName();
+    if (memberName != null) { // 일치하는 회원 찾음
+      req.setAttribute("authMessage", memberName + "회원님 안녕하세요^^");
+    } else { // 일치하는 회원 없음
+      if (admin_id.equals(id)) {
+        req.setAttribute("authMessage", "귀하는 회원이 아닙니다.");
+      }
+      req.getRequestDispatcher("/12Servlet/MemberAuth.jsp").forward(req, resp);
+    }
   }
+    @Override
+    public void destroy () {
+      super.destroy();
+    }
+
 }
