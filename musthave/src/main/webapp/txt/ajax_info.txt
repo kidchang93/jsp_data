@@ -1,0 +1,7 @@
+{"coffee_list":[
+    {"coffee_id":"15", "name":"메뉴명", "kind":"종류", "price":"가격", "reg_day":"등록일"},
+    {"coffee_id":"16", "name":"메뉴명", "kind":"종류", "price":"가격", "reg_day":"등록일"},
+    {"coffee_id":"27", "name":"메뉴명", "kind":"종류", "price":"가격", "reg_day":"등록일"},
+    {"coffee_id":"32", "name":"메뉴명", "kind":"종류", "price":"가격", "reg_day":"등록일"},
+    {"coffee_id":"84", "name":"메뉴명", "kind":"종류", "price":"가격", "reg_day":"등록일"}
+]}
