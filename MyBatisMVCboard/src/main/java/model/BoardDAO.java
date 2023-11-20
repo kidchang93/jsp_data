@@ -42,7 +42,7 @@ public class BoardDAO {
         return result;
     }
 
-    public List<BoardVO> selectListPageWithPaging(Map<String, Object> map) {
+    public List<BoardVO> getListWithPaging(Map<String, Object> map) {
         SqlSession sqlSession = MyBatisSessionFactory.getSqlSession();
         BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
         List<BoardVO> result = mapper.selectListPageWithPaging(map);

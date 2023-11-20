@@ -42,7 +42,7 @@
         VALUES(#{idx}, #{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
     </insert>
 
-    <select id="selectListPageWithPaging" parameterType="map" resultType="model.BoardVO">
+    <select id="getListWithPaging" parameterType="map" resultType="model.BoardVO">
         <![CDATA[
         SELECT *
         FROM board
@@ -60,7 +60,7 @@
             </choose>
         </if>
         order by idx desc
-        LIMIT #{pageNum}, 10
+        LIMIT #{pageNum}, #{amount}
     </select>
 
     <select id="selectView" parameterType="String" resultType="model.BoardVO">

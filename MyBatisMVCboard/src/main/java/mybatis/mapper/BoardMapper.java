@@ -2,6 +2,7 @@ package mybatis.mapper;
 
 import model.BoardVO;
 import org.apache.ibatis.annotations.Mapper;
+import paging.Criteria;
 
 import java.util.List;
 import java.util.Map;
@@ -29,4 +30,5 @@ public interface BoardMapper {
 
     int updatePost(BoardVO dto);
 
+    List<BoardVO> getListWithPaging(Criteria cri);
 }
