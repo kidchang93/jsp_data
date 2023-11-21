@@ -19,24 +19,6 @@
         </if>
         order by idx desc
     </select>
-
-    <select id="selectListPage" parameterType="map" resultType="model.BoardVO">
-        SELECT *
-        FROM board
-        <if test="searchWord != null and !searchWord.equals('')">
-            WHERE
-            <choose>
-                <when test="searchField == 'title'">
-                    title like concat('%', #{searchWord}, '%')
-                </when>
-                <otherwise>
-                    content like concat('%', #{searchWord}, '%')
-                </otherwise>
-            </choose>
-        </if>
-        order by idx desc
-    </select>
-
     <insert id="insertWrite" parameterType="model.BoardVO">
         INSERT
         INTO board(idx, name, title, content, ofile, sfile, pass)
@@ -44,24 +26,43 @@
     </insert>
 
     <select id="getListWithPaging" parameterType="map" resultType="model.BoardVO">
-        <![CDATA[
-        SELECT *
-        FROM board
-        WHERE idx > 0
-        ]]>
+<!--        <![CDATA[-->
+<!--        SELECT *-->
+<!--        FROM board-->
+<!--        WHERE idx > 0-->
+<!--        ]]>-->
+<!--        <if test="searchWord != null and !searchWord.equals('')">-->
+<!--            AND-->
+<!--            <choose>-->
+<!--                <when test="searchField == 'title'">-->
+<!--                    title LIKE CONCAT('%', #{searchWord}, '%')-->
+<!--                </when>-->
+<!--                <otherwise>-->
+<!--                    content LIKE CONCAT('%', #{searchWord}, '%')-->
+<!--                </otherwise>-->
+<!--            </choose>-->
+<!--        </if>-->
+<!--        order by idx desc-->
+<!--        BETWEEN #{ start } AND #{ end } ;-->
+<!--        order by idx desc-->
+<!--        LIMIT #{pageNum} , 10-->
+        SELECT * FROM
+        ( SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, b.*
+        FROM  board b,(SELECT @ROWNUM := 0 ) TMP
+
         <if test="searchWord != null and !searchWord.equals('')">
-            AND
             <choose>
                 <when test="searchField == 'title'">
-                    title LIKE CONCAT('%', #{searchWord}, '%')
+                    WHERE title LIKE CONCAT('%', #{searchWord}, '%')
                 </when>
                 <otherwise>
-                    content LIKE CONCAT('%', #{searchWord}, '%')
+                    WHERE content LIKE CONCAT('%', #{searchWord}, '%')
                 </otherwise>
             </choose>
         </if>
-        order by idx desc
-        LIMIT #{pageNum}, 10
+
+        ORDER BY idx DESC ) T
+        WHERE ROWNUM BETWEEN #{ start } AND #{ end }
     </select>
 
     <select id="selectView" parameterType="String" resultType="model.BoardVO">

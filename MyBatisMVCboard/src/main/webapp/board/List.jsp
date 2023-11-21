@@ -39,18 +39,21 @@
             <th width="8%">첨부</th>
         </tr>
 <c:choose>    
-    <c:when test="${ empty boardLists }">  <!-- 게시물이 없을 때 -->
+    <c:when test="${ empty boardPagingLists }">  <!-- 게시물이 없을 때 -->
         <tr>
             <td colspan="6" align="center">
                 등록된 게시물이 없습니다^^*
             </td>
         </tr>
     </c:when>
+
     <c:otherwise>  <!-- 게시물이 있을 때 -->
+        <c:set var="no" value="${ map.totalCount - ((map.pageNum - 1) * 10)}" />
         <c:forEach items="${ boardPagingLists }" var="row" varStatus="loop">
         <tr align="center">
             <td>  <!-- 번호 -->
-                ${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index)}   
+<%--                ${ map.totalCount - (((map.pageNum-1) - map.pageSize) + loop.index)}--%>
+                ${no}
             </td>
             <td align="left">  <!-- 제목(링크) -->
                 <a href="../board/view.do?idx=${ row.idx }">${ row.title }</a>
@@ -64,6 +67,7 @@
             </c:if>
             </td>
         </tr>
+            <c:set var="no" value="${no - 1}" />
         </c:forEach>        
     </c:otherwise>    
 </c:choose>

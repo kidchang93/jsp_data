@@ -33,6 +33,7 @@ public class ListController extends HttpServlet {
         if (searchWord != null && !searchWord.trim().equals("")) {
             map.put("searchField", searchField);
             map.put("searchWord", searchWord);
+
         }
 
         System.out.println("searchField...."+searchField);
@@ -57,7 +58,7 @@ public class ListController extends HttpServlet {
             pageNum = Integer.parseInt(pageTemp); // 요청받은 페이지로 수정
 
         System.out.println("pageTemp......" + pageTemp);
-
+        System.out.println("New pageNum .... "+ pageNum);
         // 목록에 출력할 게시물 범위 계산
         int start = (pageNum - 1) * pageSize + 1;  // 첫 게시물 번호
         int end = pageNum * pageSize; // 마지막 게시물 번호
@@ -66,7 +67,7 @@ public class ListController extends HttpServlet {
         /* 페이지 처리 end */
 
         System.out.println("start...."+start);
-        System.out.println("end...."+end);
+//        System.out.println("end...."+end);
 
 
         // 뷰에 전달할 매개변수 추가
@@ -76,18 +77,17 @@ public class ListController extends HttpServlet {
         map.put("totalCount", totalCount);
         map.put("pageSize", pageSize);
         map.put("pageNum", pageNum);
-        map.put("searchField",searchField);
-        map.put("searchWord",searchWord);
+
 
         System.out.println("totalCount...."+ totalCount);
         System.out.println("pageNum...." + pageNum);
         System.out.println("pageSize...." + pageSize);
         System.out.println("pagingImg .... " + pagingImg);
 
-        List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
+//        List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
         List<BoardVO> boardPagingLists = dao.getListWithPaging(map); // 페이징 처리
         // 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
-        req.setAttribute("boardLists", boardLists);
+//        req.setAttribute("boardLists", boardLists);
         req.setAttribute("boardPagingLists", boardPagingLists);
         req.setAttribute("map", map);
         req.getRequestDispatcher("/board/List.jsp").forward(req, resp);
