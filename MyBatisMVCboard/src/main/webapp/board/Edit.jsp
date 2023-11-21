@@ -27,6 +27,7 @@
 </script>
 </head>
 <h2>파일 첨부형 게시판 - 수정하기(Edit)</h2>
+<%-- 클릭 되었을 때 자바스크립트 함수를 호출한다--%>
 <form name="writeFrm" method="post" enctype="multipart/form-data" action="../board/edit.do" onsubmit="return validateForm(this);">
 <input type="hidden" name="idx" value="${ vo.idx }"/>
 <input type="hidden" name="prevOfile" value="${ vo.ofile }" />
@@ -35,7 +36,7 @@
 <table border="1" width="90%">
     <tr>
         <td>작성자</td>
-        <td>
+        <td><!--EL언어를 통해 vo에 저장되어있는 name값을 대입-->
             <input type="text" name="name" style="width:150px;" value="${ vo.name }" />
         </td>
     </tr>
