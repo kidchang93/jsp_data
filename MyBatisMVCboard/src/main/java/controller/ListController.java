@@ -24,12 +24,13 @@ public class ListController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BoardDAO dao = new BoardDAO();
         Map<String, Object> map = new HashMap<>();
+
         String searchField = req.getParameter("searchField");
         String searchWord = req.getParameter("searchWord");
 
         System.out.println("searchField = " + searchField);
         System.out.println("searchWord = " + searchWord);
-        if (searchWord != null && searchWord.trim().equals("")) {
+        if (searchWord != null && !searchWord.trim().equals("")) {
             map.put("searchField", searchField);
             map.put("searchWord", searchWord);
         }
@@ -70,11 +71,13 @@ public class ListController extends HttpServlet {
 
         // 뷰에 전달할 매개변수 추가
         String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
-                blockPage, pageNum, "../board/list.do");  // 바로가기 영역 HTML 문자열
+                blockPage, pageNum,"../board/list.do" ,searchField, searchWord );  // 바로가기 영역 HTML 문자열
         map.put("pagingImg", pagingImg);
         map.put("totalCount", totalCount);
         map.put("pageSize", pageSize);
         map.put("pageNum", pageNum);
+        map.put("searchField",searchField);
+        map.put("searchWord",searchWord);
 
         System.out.println("totalCount...."+ totalCount);
         System.out.println("pageNum...." + pageNum);

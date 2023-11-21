@@ -12,7 +12,7 @@
     <h2>파일 첨부형 게시판 - 목록 보기(List)</h2>
 
     <!-- 검색 폼 -->
-    <form method="get">  
+    <form method="get" action="${pageContext.request.contextPath}/board/list.do">
     <table border="1" width="90%">
     <tr>
         <td align="center">
@@ -20,8 +20,9 @@
                 <option value="title">제목</option>
                 <option value="content">내용</option>
             </select>
-            <input type="text" name="searchWord" />
-            <input type="submit" value="검색하기" />
+
+            <input type="text" name="searchWord" value="${param.searchWord}"/>
+            <input type="submit" value="검색하기"/>
         </td>
     </tr>
     </table>
