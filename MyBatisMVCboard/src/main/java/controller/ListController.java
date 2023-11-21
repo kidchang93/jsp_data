@@ -34,19 +34,28 @@ public class ListController extends HttpServlet {
             map.put("searchWord", searchWord);
         }
 
+        System.out.println("searchField...."+searchField);
+        System.out.println("searchWord...."+searchWord);
+
         int totalCount = dao.selectCount(map);
-//        List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
+
 
         // 페이지 처리 Start
         ServletContext application = getServletContext();
         int pageSize = Integer.parseInt(application.getInitParameter("POSTS_PER_PAGE"));
         int blockPage = Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
 
+        System.out.println("======================");
+        System.out.println("pageSize...."+pageSize);
+        System.out.println("blockPage...."+blockPage);
+
         // 현재 페이지 확인
         int pageNum = 1;  // 기본값
         String pageTemp = req.getParameter("pageNum");
         if (pageTemp != null && !pageTemp.equals(""))
             pageNum = Integer.parseInt(pageTemp); // 요청받은 페이지로 수정
+
+        System.out.println("pageTemp......" + pageTemp);
 
         // 목록에 출력할 게시물 범위 계산
         int start = (pageNum - 1) * pageSize + 1;  // 첫 게시물 번호
@@ -55,7 +64,9 @@ public class ListController extends HttpServlet {
         map.put("end", end);
         /* 페이지 처리 end */
 
-        List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
+        System.out.println("start...."+start);
+        System.out.println("end...."+end);
+
 
         // 뷰에 전달할 매개변수 추가
         String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
@@ -65,8 +76,16 @@ public class ListController extends HttpServlet {
         map.put("pageSize", pageSize);
         map.put("pageNum", pageNum);
 
+        System.out.println("totalCount...."+ totalCount);
+        System.out.println("pageNum...." + pageNum);
+        System.out.println("pageSize...." + pageSize);
+        System.out.println("pagingImg .... " + pagingImg);
+
+        List<BoardVO> boardLists = dao.selectListPage(map);  // 게시물 목록 받기
+        List<BoardVO> boardPagingLists = dao.getListWithPaging(map); // 페이징 처리
         // 전달할 데이터를 request 영역에 저장 후 List.jsp로 포워드
         req.setAttribute("boardLists", boardLists);
+        req.setAttribute("boardPagingLists", boardPagingLists);
         req.setAttribute("map", map);
         req.getRequestDispatcher("/board/List.jsp").forward(req, resp);
     }

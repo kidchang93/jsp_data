@@ -34,6 +34,7 @@
                 </otherwise>
             </choose>
         </if>
+        order by idx desc
     </select>
 
     <insert id="insertWrite" parameterType="model.BoardVO">

@@ -44,6 +44,8 @@ public class BoardPage {
             pageTemp++;
             blockCount++;
         }
+        System.out.println("pageTemp...." + pageTemp);
+        System.out.println("blockCount...."+ blockCount);
 
         // 단계 6 : '다음 페이지 블록 바로가기' 출력
         if (pageTemp <= totalPages) {
@@ -57,6 +59,8 @@ public class BoardPage {
         }
 
         // 최종적으로 조립된 페이지 네비게이션 문자열 반환
+        System.out.println("pagingStr...." + pagingStr);
         return pagingStr;
+
     }
 }

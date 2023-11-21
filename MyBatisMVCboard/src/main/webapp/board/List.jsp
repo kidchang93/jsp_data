@@ -46,7 +46,7 @@
         </tr>
     </c:when>
     <c:otherwise>  <!-- 게시물이 있을 때 -->
-        <c:forEach items="${ boardLists }" var="row" varStatus="loop">    
+        <c:forEach items="${ boardPagingLists }" var="row" varStatus="loop">
         <tr align="center">
             <td>  <!-- 번호 -->
                 ${ map.totalCount - (((map.pageNum-1) * map.pageSize) + loop.index)}   

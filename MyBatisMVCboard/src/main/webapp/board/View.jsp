@@ -45,7 +45,7 @@
         <td>
             <c:if test="${ not empty vo.ofile }">
             ${ vo.ofile }
-            <a href="../mvcboard/download.do?ofile=${ vo.ofile }&sfile=${ vo.sfile }&idx=${ vo.idx }">
+            <a href="../board/download.do?ofile=${ vo.ofile }&sfile=${ vo.sfile }&idx=${ vo.idx }">
                 [다운로드]
             </a>
             </c:if>

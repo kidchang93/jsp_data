@@ -34,9 +34,9 @@ public class BoardDAO {
         int result = mapper.insertWrite(vo);
         if (result == 1) {
             sqlSession.commit();
-            System.out.println("새로운 mvcboard 저장 성공");
+            System.out.println("새로운 board 저장 성공");
         } else {
-            System.out.println("새로운 mvcboard 저장 실패");
+            System.out.println("새로운 board 저장 실패");
         }
         sqlSession.close();
         return result;
