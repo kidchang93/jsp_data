@@ -87,7 +87,7 @@
         where idx = #{idx}
     </update>
 
-    <select id="confirmPassword" parameterType="map" >
+    <select id="confirmPassword" parameterType="map" resultType="int">
         select count(*)
         from board
         where pass = #{pass} and idx = #{idx}

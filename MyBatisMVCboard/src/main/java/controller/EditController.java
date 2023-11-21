@@ -28,13 +28,15 @@ public class EditController extends HttpServlet {
         BoardDAO dao = new BoardDAO();
         BoardVO vo = dao.selectView(idx);
         req.setAttribute("vo",vo);
-        req.getRequestDispatcher(req.getContextPath() + "/board/Edit.jsp").forward(req,resp);
+        req.getRequestDispatcher("/board/Edit.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String saveDirectory = req.getServletContext().getRealPath("/Uploads");
-
+        // 1. 파일 업로드 처리 =============================
+        // 업로드 디렉터리의 물리적 경로 확인
+        // 파일 업로드
         String originalFileName = "";
         try {
             originalFileName = FileUtil.uploadFile(req,saveDirectory);
