@@ -38,6 +38,10 @@
             <th width="15%">작성일</th>
             <th width="8%">첨부</th>
         </tr>
+
+        <%--choose when otherwise 는 java로 치면
+        if else 문이랑 비슷한 반복문 성질을 가지고 있다.
+        MVC2 패턴을 잘 나타내고 분리된 메서드를 이용해 동적으로 처리하기 위함.--%>
 <c:choose>    
     <c:when test="${ empty boardPagingLists }">  <!-- 게시물이 없을 때 -->
         <tr>
