@@ -18,7 +18,10 @@ public class PassController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
+        // 요청 파라미터에서 모드 추출하여 request 영역에 저장
         req.setAttribute("mode",req.getParameter("mode"));
+        // Pass.jsp로 포워드
         req.getRequestDispatcher("/board/Pass.jsp").forward(req,resp);
     }
 
@@ -34,11 +37,12 @@ public class PassController extends HttpServlet {
         BoardDAO dao = new BoardDAO();
         boolean confirmed = dao.confirmPassword(pass,idx);
 
-        System.out.println("confirmed=========" + confirmed);
+//        System.out.println("confirmed=========" + confirmed);
 
 
         if (confirmed) {  // 비밀번호 일치
             if (mode.equals("edit")) {  // 수정 모드
+                // 세션에 비밀번호 저장 후 수정 페이지로 이동
                 HttpSession session = req.getSession();
                 session.setAttribute("pass", pass);
                 resp.sendRedirect("../board/edit.do?idx=" + idx);
@@ -51,6 +55,7 @@ public class PassController extends HttpServlet {
                     String saveFileName = vo.getSfile();
                     FileUtil.deleteFile(req, "/Uploads", saveFileName);
                 }
+                // 자바스크립트 함수 실행.
                 JSFunction.alertLocation(resp, "삭제되었습니다.", "../board/list.do");
             }
         }
