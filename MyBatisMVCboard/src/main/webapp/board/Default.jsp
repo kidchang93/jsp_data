@@ -8,6 +8,6 @@
 </head>
 <body>
     <h2>파일 첨부형 게시판</h2>
-    <a href="../board/list.do">게시판 목록 바로가기</a>
+    <a href="${pageContext.request.contextPath}/board/list.do">게시판 목록 바로가기</a>
 </body>
 </html>

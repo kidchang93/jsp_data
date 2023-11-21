@@ -16,13 +16,15 @@ import java.io.IOException;
 @WebServlet("/board/pass.do")
 public class PassController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.setAttribute("mode",req.getParameter("mode"));
-        req.getRequestDispatcher(req.getContextPath()+"/board/Pass.jsp").forward(req,resp);
+        req.getRequestDispatcher("/board/Pass.jsp").forward(req,resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String idx = req.getParameter("idx");
         String mode = req.getParameter("mode");
         String pass = req.getParameter("pass");
@@ -34,7 +36,7 @@ public class PassController extends HttpServlet {
             if (mode.equals("edit")){
                 HttpSession session = req.getSession();
                 session.setAttribute("pass",pass);
-                resp.sendRedirect(req.getContextPath() + "/board/edit.do?idx=" + idx);
+                resp.sendRedirect("/board/edit.do?idx=" + idx);
             } else if (mode.equals("delete")) {
                 BoardVO vo = new BoardVO();
                 int result = dao.deletePost(idx);
@@ -42,10 +44,11 @@ public class PassController extends HttpServlet {
                     String saveFileName = vo.getSfile();
                     FileUtil.deleteFile(req,"/Uploads", saveFileName);
                 }
-                JSFunction.alertLocation(resp,"삭제되었습니다.",req.getContextPath() + "/board/list.do");
-            } else {
-                JSFunction.alertBack(resp,"비밀번호가 일치하지 않습니다.");
+                JSFunction.alertLocation(resp,"삭제되었습니다.","/board/list.do");
             }
+        }
+        else {
+            JSFunction.alertBack(resp,"비밀번호가 일치하지 않습니다.");
         }
     }
 }
