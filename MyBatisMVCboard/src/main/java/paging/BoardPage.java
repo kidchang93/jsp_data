@@ -1,5 +1,15 @@
 package paging;
 
+
+/*
+ * 주어진 페이지 관련 정보를 바탕으로 페이징 처리를 수행하는 유틸리티 메서드.
+ * @param totalCount 전체 항목 수
+ * @param pageSize 한 페이지에 보여질 항목 수
+ * @param blockPage 한 블록에 보여질 페이지 수
+ * @param pageNum 현재 페이지 번호
+ * @param reqUrl 페이지 링크가 걸릴 URL
+ * @return 페이지 네비게이션을 나타내는 HTML 문자열
+ */
 public class BoardPage {
     public static String pagingStr(int totalCount, int pageSize, int blockPage,
                                    int pageNum, String reqUrl) {
