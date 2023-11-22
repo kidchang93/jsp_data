@@ -21,8 +21,12 @@
     </select>
     <insert id="insertWrite" parameterType="model.BoardVO">
         INSERT
-        INTO board( name, title, content, ofile, sfile, pass)
-        VALUES( #{name}, #{title}, #{content}, #{ofile}, #{sfile}, #{pass})
+        INTO board(name, title, content, ofile, sfile, pass)
+        VALUES(#{name}, #{title}, #{content}, #{ofile}, #{sfile}, sha2(#{pass}+(
+        SELECT AUTO_INCREMENT
+        FROM information_schema.tables
+        WHERE table_name = 'board'
+        AND table_schema = DATABASE()),256))
     </insert>
 
     <select id="getListWithPaging" parameterType="map" resultType="model.BoardVO">
@@ -88,9 +92,10 @@
     </update>
 
     <select id="confirmPassword" parameterType="map" resultType="int">
-        select count(*)
+        select count(idx)
         from board
-        where pass = #{pass} and idx = #{idx}
+        where pass = sha2(#{pass}+#{idx}, 256)
+        and idx = #{idx}
     </select>
 
     <delete id="deletePost">
@@ -103,6 +108,6 @@
         update board
         set title = #{title}, name = #{name},
         content = #{content}, ofile = #{ofile}, sfile = #{sfile}
-        where idx = #{idx} and pass = #{pass}
+        where idx = #{idx} and pass = sha2(#{pass}+#{idx}, 256)
     </update>
 </mapper>
