@@ -1,5 +1,6 @@
 package controller;
 
+import Util.Encrypt;
 import Util.FileUtil;
 import Util.JSFunction;
 import model.BoardDAO;
@@ -31,7 +32,7 @@ public class PassController extends HttpServlet {
         // 매개변수 저장
         String idx = req.getParameter("idx");
         String mode = req.getParameter("mode");
-        String pass = req.getParameter("pass");
+        String pass = Encrypt.getEncrypt(req.getParameter("pass"));
 
         // 비밀번호 확인
         BoardDAO dao = new BoardDAO();
@@ -55,12 +56,14 @@ public class PassController extends HttpServlet {
                     String saveFileName = vo.getSfile();
                     FileUtil.deleteFile(req, "/Uploads", saveFileName);
                 }
+
                 // 자바스크립트 함수 실행.
                 JSFunction.alertLocation(resp, "삭제되었습니다.", "../board/list.do");
             }
         }
         else {  // 비밀번호 불일치
             JSFunction.alertBack(resp, "비밀번호 검증에 실패했습니다.");
+
         }
     }
 }
