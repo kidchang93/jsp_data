@@ -1,6 +1,6 @@
 package controller;
 
-import Util.Encrypt;
+//import Util.Encrypt;
 import Util.FileUtil;
 import Util.JSFunction;
 import model.BoardDAO;
@@ -32,7 +32,8 @@ public class PassController extends HttpServlet {
         // 매개변수 저장
         String idx = req.getParameter("idx");
         String mode = req.getParameter("mode");
-        String pass = Encrypt.getEncrypt(req.getParameter("pass"));
+//        String pass = Encrypt.getEncrypt(req.getParameter("pass"));
+        String pass = req.getParameter("pass");
 
         // 비밀번호 확인
         BoardDAO dao = new BoardDAO();

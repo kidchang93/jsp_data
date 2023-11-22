@@ -1,6 +1,6 @@
 package controller;
 
-import Util.Encrypt;
+//import Util.Encrypt;
 import Util.FileUtil;
 import Util.JSFunction;
 import model.BoardDAO;
@@ -68,7 +68,8 @@ public class EditController extends HttpServlet {
         // 세션에서 비밀번호 추출
         HttpSession session = req.getSession();
         // 암호화 테스트
-        String pass = Encrypt.getEncrypt((String)session.getAttribute("pass"));
+//        String pass = Encrypt.getEncrypt((String)session.getAttribute("pass"));
+        String pass = (String) session.getAttribute("pass");
 
         // BoardVO 객체 생성 및 필드 설정
         BoardVO vo = new BoardVO();
@@ -76,7 +77,8 @@ public class EditController extends HttpServlet {
         vo.setName(name);
         vo.setTitle(title);
         vo.setContent(content);
-        vo.setPass(Encrypt.getEncrypt(pass));
+        vo.setPass(pass);
+//        vo.setPass(Encrypt.getEncrypt(pass));
 
         // 파일이 업로드되었을 경우, 파일명 설정 및 기존 파일 삭제
         if (originalFileName != "" && !originalFileName.equals("") && !originalFileName.isEmpty()){

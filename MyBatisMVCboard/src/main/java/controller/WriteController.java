@@ -1,6 +1,6 @@
 package controller;
 
-import Util.Encrypt;
+//import Util.Encrypt;
 import Util.FileUtil;
 import Util.JSFunction;
 import model.BoardDAO;
@@ -53,7 +53,7 @@ private BoardDAO dao = new BoardDAO();
         vo.setTitle(req.getParameter("title"));
         vo.setContent(req.getParameter("content"));
         vo.setPass(req.getParameter("pass"));
-        vo.setPass(Encrypt.getEncrypt(req.getParameter("pass")));
+//        vo.setPass(Encrypt.getEncrypt(req.getParameter("pass")));
 
         // 파일이 업로드되었을 경우, 파일명 설정
         if (originalFileName != null && !originalFileName.equals("")) {

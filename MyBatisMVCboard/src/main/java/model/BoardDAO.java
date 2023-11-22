@@ -124,7 +124,7 @@ public class BoardDAO {
         sqlSession.close();
     }
 
-    public boolean confirmPassword(String pass, String idx) {
+    public boolean confirmPassword(String pass, String idx ) {
         // 비밀번호와 게시물 인덱스를 매개변수로 하는 맵 생성
         Map<String, String> map = new HashMap<>();
         map.put("pass", pass);
