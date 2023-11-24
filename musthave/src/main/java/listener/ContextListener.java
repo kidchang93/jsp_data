@@ -2,8 +2,8 @@ package listener;
 
 import java.util.Enumeration;
 
-import jakarta.servlet.ServletContextEvent;
-import jakarta.servlet.ServletContextListener;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 
 public class ContextListener implements ServletContextListener {
 
