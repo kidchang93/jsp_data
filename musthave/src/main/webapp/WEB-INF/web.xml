@@ -42,6 +42,11 @@
         <param-name>PAGES_PER_BLOCK</param-name>
         <param-value>5</param-value>
     </context-param>
+
+    <context-param>
+        <param-name>CHAT_ADDR</param-name>
+        <param-value>ws://localhost:8090/musthave_war_exploded/</param-value>
+    </context-param>
 <!--    MemberAuth 서블릿 세팅-->
     <servlet>
         <servlet-name>MemberAuth</servlet-name>
