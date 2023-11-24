@@ -12,8 +12,8 @@ public class JSFunction {
                     +"</script>";
             out.print(script);
         }catch (Exception e){
-
         }
+
 
     }
 
