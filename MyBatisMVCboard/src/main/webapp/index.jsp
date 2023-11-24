@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+  <meta charset="UTF-8">
+  <title>MVC BOARD</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1>< 게시판 글쓰기 ></h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="/MyBatisMVCboard_war_exploded/board/list.do">게시판으로 이동</a>
 </body>
 </html>
