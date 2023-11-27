@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.card{
+	width: 90%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    flex-direction: column;
+    position: relative;
+    margin-right: 10px; 
+    margin-bottom: 10px;
+}
+
+.card.active{
+	background-color: #cccccc;
+}
+
+.card-head{
+	text-align:center;
+	height: 80%;
+ 	vertical-align : middle;
+	position: relative;
+	font-size: 14px;
+}
+.card-head p{
+	padding: 12px;
+}
+.card-main{
+	font-size: 14px;
+	position: relative;
+	text-align:center;	
+}
+.card-main p {
+	padding: 12px 5px 5px;
+}
+
+.card-footer{
+	text-align:center;
+	top: 20%;
+	font-size: 14px;
+	padding-bottom: 10px
+}
+
+
+.room{
+	width: 97%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    flex-direction: column;
+    position: relative;
+    margin-right: 10px; 
+}
+.room-head{
+	text-align:center;
+	height: 30px;
+ 	vertical-align : middle;
+	position: relative;
+	font-size: 14px;
+}
+.room-head p{
+	padding: 12px;
+}
+.v-main{
+	font-size: 14px;
+	position: relative;
+	text-align:center;	
+}
+.room-main p {
+	padding: 12px 5px 5px;
+}
+
+.room-footer{
+	text-align:center;
+	top: 20%;
+	font-size: 14px;
+	padding-bottom: 10px
+}
+
+/* 공지사항 */
+.notice { 
+	background-color:#efefef; 
+	position:relative; 
+	padding:20px; 
+}
+
+.notice .title { 
+	font-size:20px; 
+	font-weight:bold; 
+}
+
+.notice .btn { 
+	position:absolute; 
+	top:10px; 
+	right:20px; 
+}
+
+.notice .notice-list { 
+	width:100%; 
+	border-collapse:collapse; 
+	margin-top:10px; 
+}
+
+.notice .notice-list td { 
+	padding:8px 3px; 
+}
+
+.notice .notice-list td.date { 
+	text-align:right; 
+	width:150px; 
+}
+
+.notice .notice-list a:hover { 
+	color:#00f; 
+	text-decoration:underline; 
+}
+
+
+
+.statis{
+    border: 2px solid rgba(0, 0, 0, .1);
+    flex-direction: column;
+    position: relative;
+    margin : 10px 10px 10px 10px; 
+	background-color: #90c2ff;
+
+}
+
+
+.statis-head{
+	text-align:center;
+	height: 80%;
+ 	vertical-align : middle;
+	position: relative;
+	font-size: 14px;
+}
+.statis-head p{
+	padding: 12px;
+	position: relative; 
+	left: 35px; 
+	color: #FFFFFF; 
+	font-weight: bold; 
+	font-size: 20px;
+}
+.statis-body{
+	font-size: 14px;
+}
+.statis-body p {
+	padding: 3px 3px 3px;
+	position: relative;
+	font-weight: bold; 
+	font-size: 20px;
+
+}
+
+.statis-footer{
+	text-align:center;
+	top: 20%;
+	font-size: 14px;
+	padding-bottom: 10px
+}
+

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+
+
+
+.btn-white{
+	background-color: #fff;
+	border: 1px solid #d7dade;
+	margin:4px;
+	border-radius: 2px;
+}
+
+.btn-white:hover{
+	background-color: #0075ff;
+	color:#fff;	
+}
+
+.table1 thead{
+	background-color: #0075ff; 
+	color: #fff; 
+	text-align: center;
+	position: sticky;
+    top: 0px;
+}
+
+.table1 tr{
+	height: 50px;
+	
+}
+
+
+.table1 tr td{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ddd
+	
+}
+
+
+
+.table1 tbody tr td a:hover{
+	text-decoration: underline;	
+}
+.addbtn:hover {
+	background-color: #39ace7;
+}
+
+
+
+

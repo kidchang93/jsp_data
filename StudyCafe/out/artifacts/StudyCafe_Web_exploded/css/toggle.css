@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+#btn{height:50px; background-color:#fff; cursor:pointer; margin:0 auto; text-align:right; line-height:50px;}
+
+#slideTogglebox{width:110px; height:100px; background-color:#fff; display:none; font-size:10px;}
+
+#slideTogglebox li a{
+	padding-right: 2px; 
+}
+
+#slideTogglebox > li > a:hover, .nav > li > a:focus {
+	background-color: #fff;
+}
