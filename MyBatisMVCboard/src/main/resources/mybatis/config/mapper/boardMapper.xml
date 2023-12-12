@@ -30,26 +30,6 @@
     </insert>
 
     <select id="getListWithPaging" parameterType="map" resultType="model.BoardVO">
-<!--        <![CDATA[-->
-<!--        SELECT *-->
-<!--        FROM board-->
-<!--        WHERE idx > 0-->
-<!--        ]]>-->
-<!--        <if test="searchWord != null and !searchWord.equals('')">-->
-<!--            AND-->
-<!--            <choose>-->
-<!--                <when test="searchField == 'title'">-->
-<!--                    title LIKE CONCAT('%', #{searchWord}, '%')-->
-<!--                </when>-->
-<!--                <otherwise>-->
-<!--                    content LIKE CONCAT('%', #{searchWord}, '%')-->
-<!--                </otherwise>-->
-<!--            </choose>-->
-<!--        </if>-->
-<!--        order by idx desc-->
-<!--        BETWEEN #{ start } AND #{ end } ;-->
-<!--        order by idx desc-->
-<!--        LIMIT #{pageNum} , 10-->
         SELECT * FROM
         ( SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM, b.*
         FROM  board b,(SELECT @ROWNUM := 0 ) TMP
