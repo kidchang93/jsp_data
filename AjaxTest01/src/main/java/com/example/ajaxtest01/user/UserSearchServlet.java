@@ -31,7 +31,7 @@ public class UserSearchServlet extends HttpServlet {
             result.append("[{\"value\": \"" + userList.get(i).getUserName() + "\"},");
             result.append("{\"value\": \"" + userList.get(i).getUserAge() + "\"},");
             result.append("{\"value\": \"" + userList.get(i).getUserGender() + "\"},");
-            result.append("{\"value\": \"" + userList.get(i).getUserEmail() + "\"}],");
+            result.append("{\"value\": \"" + userList.get(i).getUserEmail() + "\"}]");
         }
         result.append("]}");
         return result.toString();

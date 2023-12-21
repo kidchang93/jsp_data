@@ -34,6 +34,33 @@
         window.onload = function(){
             searchFunction();
         }
+/*        var req = new XMLHttpRequest();
+
+        function searchFunction() {
+            req.open("POST", "./UserSearchServlet?userName=" + encodeURIComponent(document.getElementById("userName").value), true);
+            req.onreadystatechange = searchProcess;
+            req.send(null);
+        }
+
+        function searchProcess() {
+            var table = document.getElementById("ajaxTable");
+            table.innerHTML = "";
+            if (req.readyState == 4 && req.status == 200) {
+                var object = JSON.parse(req.responseText);
+                var result = object.result;
+                for (var i = 0; i < result.length; i++) {
+                    var row = table.insertRow(0);
+                    for (var j = 0; j < result[i].length; j++) {
+                        var cell = row.insertCell(j);
+                        cell.innerHTML = result[i][j].value;
+                    }
+                }
+            }
+        }
+
+        window.onload = function () {
+            searchFunction();
+        };*/
     </script>
 </head>
 <body>

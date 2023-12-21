@@ -24,11 +24,11 @@ public class UserDAO {
         }
     }
     public ArrayList<UserDTO> search(String userName){
-        String SQL = "select * from user where user_name = ?";
+        String SQL = "select * from user where user_name like ?";
         ArrayList<UserDTO> userList = new ArrayList<UserDTO>();
         try {
             pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1,userName);
+            pstmt.setString(1,"%" + userName + "%");
             rs = pstmt.executeQuery();
             while (rs.next()){
                 UserDTO dto = new UserDTO();
