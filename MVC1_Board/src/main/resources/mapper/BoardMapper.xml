@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 인터페이스 연결 -->
+<!-- mapper namespace = "package명.인터페이스명" -->
+<mapper namespace="Board.BoardDAO">
+    <!-- 해당 sql을 인터페이스에 선언된 메서드와 연결해서 처리. -->
+    <!-- id="메서드명" parameterType "매개변수 타입" resultType 리턴 타입(풀 패키지명) -->
+    <select id="selectList" parameterType="map" resultType="Board.BoardDTO">
+        SELECT idx, name, title, content, postDate, visitCount
+        FROM board
+    </select>
+    <select id="selectView" parameterType="String" resultType="Board.BoardDTO">
+        select idx, name, title, content, postDate, visitCount
+        from board
+        where idx = #{idx}
+    </select>
+
+</mapper>

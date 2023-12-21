@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71e2360e-2c04-4525-8a84-61c44108adfa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/demo33/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/java/com/example/demo33/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/java/common/DBConnPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/java/common/JDBConnect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/webapp/ConnectionTest.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo33/src/main/webapp/lib/demo33.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/src/main/java/com/example/demo333/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo333/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,16 +20,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/lck_data/jsp_data&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/lck_data/jsp_data",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,6 +40,7 @@
       <updated>1699329788148</updated>
       <workItem from="1699329789161" duration="15000" />
       <workItem from="1699417864038" duration="16000" />
+      <workItem from="1702387103861" duration="14000" />
     </task>
     <servers />
   </component>

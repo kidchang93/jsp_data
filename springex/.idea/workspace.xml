@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="springex:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ed413f9-2463-4c52-91ef-95bb1478777e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/Board/BoardDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/Board/BoardDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/com/example/mvc1_board/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/mybatis/config/MyBatisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/mybatis/factory/MyBatisSessionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/java/mybatis/mapper/BoardMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/resources/config/MyBatisConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/resources/mapper/BoardMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/sql/MVC1_BOARD.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/board/List.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/board/View.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/lombok.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/mariadb-java-client-3.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/mybatis-3.5.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/taglibs-standard-compat-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/taglibs-standard-jstlel-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MVC1_Board/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../musthave/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jsp_mvc1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jsp_mvc1/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2ZaJo4r6rDtiVmdFpfdeVEia1Up" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/lck_data/jsp_data/springex/src/test/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\lck_data\jsp_data\springex\src\test\java" />
+      <recent name="D:\lck_data\jsp_data\springex\src\main\java\org\zerock\springex" />
+      <recent name="D:\lck_data\jsp_data\springex\src\main\java" />
+      <recent name="D:\lck_data\jsp_data\springex\src\main\webapp\WEB-INF" />
+      <recent name="D:\lck_data\jsp_data\springex\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\lck_data\int_spr" />
+      <recent name="D:\lck_data\jsp_data\springex\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.82">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in springex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springex" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SampleTests.testService1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springex" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.zerock.springex.sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.zerock.springex.sample" />
+      <option name="MAIN_CLASS_NAME" value="org.zerock.springex.sample.SampleTests" />
+      <option name="METHOD_NAME" value="testService1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeMapperTests.testNow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springex" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.zerock.springex.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.zerock.springex.mapper" />
+      <option name="MAIN_CLASS_NAME" value="org.zerock.springex.mapper.TimeMapperTests" />
+      <option name="METHOD_NAME" value="testNow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:/jdk-11.0.2">
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="springex:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/springex_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="e08d0201-f261-4501-858d-aa870fe90e6e" />
+        <option name="HTTP_PORT" value="8092" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53357" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="springex:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.All in springex" />
+      <item itemvalue="JUnit.SampleTests.testService1" />
+      <item itemvalue="JUnit.TimeMapperTests.testNow" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.82" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in springex" />
+        <item itemvalue="JUnit.SampleTests.testService1" />
+        <item itemvalue="JUnit.TimeMapperTests.testNow" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ed413f9-2463-4c52-91ef-95bb1478777e" name="Changes" comment="" />
+      <created>1702654427656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702654427656</updated>
+      <workItem from="1702654428654" duration="742000" />
+      <workItem from="1702655253965" duration="533000" />
+      <workItem from="1702655900515" duration="171000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
